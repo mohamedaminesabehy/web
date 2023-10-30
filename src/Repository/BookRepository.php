@@ -42,16 +42,6 @@ public function booksListByAuthors()
 }
 
 
-public function findBooksPublishedBetweenDates(\DateTime $startDate, \DateTime $endDate)
-    {
-        $qb = $this->createQueryBuilder('b')
-            ->where('b.publishedDate >= :startDate')
-            ->andWhere('b.publishedDate <= :endDate')
-            ->setParameter('startDate', $startDate)
-            ->setParameter('endDate', $endDate);
-
-        return $qb->getQuery()->getResult();
-    }
 
 //* public function searchBookByRef($searchTerm)  bi DQL kifeh
 //{
